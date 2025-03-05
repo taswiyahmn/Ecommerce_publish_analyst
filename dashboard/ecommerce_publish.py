@@ -16,7 +16,7 @@ NAMA_PROVINSI = {
 # Memuat Data (Ganti dengan path dataset yang sesuai)
 @st.cache_data
 def muat_data():
-    df = pd.read_csv("C:/Users/hp/ecommerce_final.csv")  # Ganti dengan dataset yang sesuai
+    df = pd.read_csv("dashboard/ecommerce_final.csv")  # Ganti dengan dataset yang sesuai
     df["customer_state"] = df["customer_state"].map(NAMA_PROVINSI)  # Ubah kode provinsi menjadi nama lengkap
     df["order_date"] = pd.to_datetime(df["order_date"])  # Pastikan order_date dalam format datetime
     return df
